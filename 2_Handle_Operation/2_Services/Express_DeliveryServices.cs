@@ -18,18 +18,18 @@ namespace Assignment_Chsarp5_datntph19899._1_DataProcessing._1_Models
 
         public async Task<List<Express_Delivery>> GetExpressDeliveriesAsync()
         {
-            return await _dbContext.express_Deliveries.ToListAsync();
+            return await _dbContext.Express_Deliveries.ToListAsync();
         }
 
         public async Task<Express_Delivery> GetExpressDeliveryByIdAsync(Guid id)
         {
-            return await _dbContext.express_Deliveries.FindAsync(id);
+            return await _dbContext.Express_Deliveries.FindAsync(id);
         }
 
         public async Task<Guid> AddExpressDeliveryAsync(Express_Delivery expressDelivery)
         {
             expressDelivery.ID = Guid.NewGuid();
-            await _dbContext.express_Deliveries.AddAsync(expressDelivery);
+            await _dbContext.Express_Deliveries.AddAsync(expressDelivery);
             await _dbContext.SaveChangesAsync();
             return expressDelivery.ID;
         }
@@ -43,11 +43,11 @@ namespace Assignment_Chsarp5_datntph19899._1_DataProcessing._1_Models
 
         public async Task<bool> DeleteExpressDeliveryAsync(Guid id)
         {
-            var expressDelivery = await _dbContext.express_Deliveries.FindAsync(id);
+            var expressDelivery = await _dbContext.Express_Deliveries.FindAsync(id);
             if (expressDelivery == null)
                 return false;
 
-            _dbContext.express_Deliveries.Remove(expressDelivery);
+            _dbContext.Express_Deliveries.Remove(expressDelivery);
             await _dbContext.SaveChangesAsync();
             return true;
         }
