@@ -6,7 +6,6 @@ namespace Assignment_Chsarp5_datntph19899._1_DataProcessing._3_Context
 {
     public class Assignment_Context : DbContext
     {
-
         public Assignment_Context()
         {
 
@@ -37,6 +36,7 @@ namespace Assignment_Chsarp5_datntph19899._1_DataProcessing._3_Context
         public DbSet<OrderDetail> OrdelDetail { get; set; }
         public DbSet<Reviews> Reviews { get; set; } 
         public DbSet<Coupons> Coupons { get; set; }
+        public DbSet<Delivery_Address> Delivery_Addresses { get; set; }
         public DbSet<Express_Delivery> Express_Deliveries { get; set; }
     }
 }

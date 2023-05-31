@@ -8,7 +8,7 @@ namespace Assignment_Chsarp5_datntph19899._1_DataProcessing._2_Configurations
     {
         public void Configure(EntityTypeBuilder<Order> builder)
         {
-            builder.HasKey(c => c.OrdelID);
+            builder.HasKey(c => c.OrderID);
             builder.Property(c => c.OrderDate).IsRequired();
             builder.Property(c=>c.TotalPrice).IsRequired();
             builder.Property(c=>c.Status).IsRequired();

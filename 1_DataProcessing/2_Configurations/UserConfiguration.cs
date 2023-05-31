@@ -17,7 +17,7 @@ namespace Assignment_Chsarp5_datntph19899._1_DataProcessing._2_Configurations
             builder.Property(c => c.PhoneNumber).HasMaxLength(10).IsRequired();
             builder.Property(c=>c.Status).IsRequired();
 
-            builder.HasMany(c => c.Bills).WithOne(c => c.Users).HasForeignKey(c => c.UserID);
+            
             builder.HasMany(c => c.Orders).WithOne(c => c.Users).HasForeignKey(c => c.UserID);
             builder.HasOne(c => c.Role).WithMany(c => c.Users).HasForeignKey(c => c.IDRole);
         }

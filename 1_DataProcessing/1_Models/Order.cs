@@ -2,7 +2,7 @@
 {
     public class Order
     {
-        public Guid OrdelID { get; set; }
+        public Guid OrderID { get; set; }
         public Guid UserID { get; set; }
         public DateTime OrderDate { get; set; }
         public decimal TotalPrice { get; set; }

@@ -13,9 +13,10 @@
         public int Status { get; set; }
 
         public virtual Role Role { get; set; }
-        public ICollection<Bill> Bills { get; set; }
+        public virtual ICollection<Bill> Bills { get; set; }
         //public ICollection<Express_Delivery> Express_Delivery { get; set; }
         public ICollection<Reviews> Reviews { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
+        public ICollection<Delivery_Address> Delivery_Addresses { get; set; }
     }
 }
