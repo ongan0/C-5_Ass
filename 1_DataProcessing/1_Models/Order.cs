@@ -10,6 +10,6 @@
 
         public ICollection<OrderDetail> OrderDetail { get; set; }
 
-        public virtual Users Users { get; set; }
+        public virtual User Users { get; set; }
     }
 }

@@ -18,10 +18,9 @@ namespace Assignment_Chsarp5_datntph19899._1_DataProcessing._2_Configurations
             builder.Property(c=>c.Shipping_Address).IsRequired();
             builder.Property(c=>c.Payment_Status).IsRequired();
 
-            builder.HasOne(c => c.Users).WithMany(c => c.Bills).HasForeignKey(c => c.UserID);
+            
             builder.HasMany(c=>c.BillDetails).WithOne(c=>c.Bill).HasForeignKey(c=>c.ID);
-            builder.HasOne(c => c.Delivery_Address).WithMany(c => c.Bills).HasForeignKey(c => c.Delivery_AddressId);
-            //builder.HasOne(c => c.Express_Delivery).WithOne(c => c.Bill).HasForeignKey<Express_Delivery>(c => c.ID);
+            //builder.HasOne(c => c.Delivery_Address).WithMany(c => c.Bills).HasForeignKey(c => c.Delivery_AddressID);
         }
     }
 }

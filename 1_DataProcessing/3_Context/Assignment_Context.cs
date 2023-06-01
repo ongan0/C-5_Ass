@@ -25,7 +25,27 @@ namespace Assignment_Chsarp5_datntph19899._1_DataProcessing._3_Context
         //    modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         //}
 
-        public DbSet<Users> Users { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            //modelBuilder.Entity<Bill>()
+            //    .HasOne(b => b.Delivery_Address)
+            //    .WithMany()
+            //    .HasForeignKey(b => b.Delivery_AddressID)
+            //    .OnDelete(DeleteBehavior.NoAction); // Chỉ định hành động NO ACTION
+
+            modelBuilder.Entity<Bill>()
+                .HasOne(b => b.User)
+                .WithMany(u => u.Bills)
+                .HasForeignKey(b => b.UserID)
+                .OnDelete(DeleteBehavior.NoAction); // Chỉ định hành động NO ACTION
+
+            // Cấu hình các thành phần khác của model
+
+            base.OnModelCreating(modelBuilder);
+        }
+
+
+        public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Bill> Bills { get; set; }
         public DbSet<BillDetail> BillDetails { get; set; }

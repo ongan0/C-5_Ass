@@ -1,10 +1,12 @@
-﻿namespace Assignment_Chsarp5_datntph19899._1_DataProcessing._1_Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Assignment_Chsarp5_datntph19899._1_DataProcessing._1_Models
 {
     public class Bill
     {
         public Guid ID { get; set; }
         public Guid UserID { get; set; }// ID của khách hàng ở bảng User
-        public Guid Delivery_AddressId { get; set; }
+        public Guid Delivery_AddressID { get; set; } // địa chỉ
         public string Shipping_Address { get; set; } // địa chỉ gửi hàng
         public DateTime OrderDate { get; set; }
         public decimal TotalPrice { get; set; }
@@ -14,7 +16,7 @@
         public decimal Shipping_Cost { get; set; }//phí vận chuyển
         public int Payment_Status { get; set; }//trạng thái thanh toán
 
-        public virtual Users Users { get; set; }
+        public virtual User User { get; set; }
         public ICollection<BillDetail> BillDetails { get; set; }
         public virtual Delivery_Address Delivery_Address { get; set; }
     }

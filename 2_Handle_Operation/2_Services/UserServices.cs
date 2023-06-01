@@ -14,17 +14,17 @@ namespace Assignment_Chsarp5_datntph19899._2_Handle_Operation._2_Services
             _dbContext = dbContext;
         }
 
-        public async Task<List<Users>> GetUsersAsync()
+        public async Task<List<User>> GetUsersAsync()
         {
             return await _dbContext.Users.ToListAsync();
         }
 
-        public async Task<Users> GetUserByIdAsync(Guid id)
+        public async Task<User> GetUserByIdAsync(Guid id)
         {
             return await _dbContext.Users.FindAsync(id);
         }
 
-        public async Task<Guid> AddUserAsync(Users user)
+        public async Task<Guid> AddUserAsync(User user)
         {
             user.ID = Guid.NewGuid();
             await _dbContext.Users.AddAsync(user);
@@ -32,7 +32,7 @@ namespace Assignment_Chsarp5_datntph19899._2_Handle_Operation._2_Services
             return user.ID;
         }
 
-        public async Task<bool> UpdateUserAsync(Users user)
+        public async Task<bool> UpdateUserAsync(User user)
         {
             _dbContext.Entry(user).State = EntityState.Modified;
             await _dbContext.SaveChangesAsync();

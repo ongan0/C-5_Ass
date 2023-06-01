@@ -8,7 +8,7 @@
         public string Receiver_Address { get; set; }
         public string PhoneNumber { get; set; }
 
-        public virtual Users User { get; set; }
+        public virtual User User { get; set; }
         public ICollection<Bill> Bills { get; set; }
     }
 }

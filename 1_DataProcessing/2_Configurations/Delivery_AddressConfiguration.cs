@@ -14,6 +14,7 @@ namespace Assignment_Chsarp5_datntph19899._1_DataProcessing._2_Configurations
             //public string Receiver_Name { get; set; }
             //public string Receiver_Address { get; set; }
             //public string PhoneNumber { get; set; }
+            builder.HasOne(c => c.User).WithMany(c => c.Delivery_Addresses).HasForeignKey(c => c.CustomerID);
         }
     }
 }

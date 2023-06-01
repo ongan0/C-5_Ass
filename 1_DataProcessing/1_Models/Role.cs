@@ -7,6 +7,6 @@
         public string Description { get; set; }
         public int Status { get; set; }
 
-        public ICollection<Users> Users { get; set; }
+        public ICollection<User> Users { get; set; }
     }
 }
