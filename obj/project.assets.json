@@ -3054,6 +3054,23 @@
         "runtime": {
           "lib/net5.0/Utility.SharedLibrary.dll": {}
         }
+      },
+      "Assignment_CS5_Share/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity": "2.2.0",
+          "Microsoft.EntityFrameworkCore": "6.0.16",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.16",
+          "Swashbuckle.AspNetCore": "6.2.3",
+          "Velites.Utility.EnityFrameworkExtension": "1.0.19"
+        },
+        "compile": {
+          "bin/placeholder/Assignment_CS5_Share.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Assignment_CS5_Share.dll": {}
+        }
       }
     }
   },
@@ -8721,10 +8738,16 @@
         "velites.utility.sharedlibrary.1.0.19.nupkg.sha512",
         "velites.utility.sharedlibrary.nuspec"
       ]
+    },
+    "Assignment_CS5_Share/1.0.0": {
+      "type": "project",
+      "path": "../Assignment_CS5_Share/Assignment_CS5_Share.csproj",
+      "msbuildProject": "../Assignment_CS5_Share/Assignment_CS5_Share.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Assignment_CS5_Share >= 1.0.0",
       "Microsoft.AspNetCore.Identity >= 2.2.0",
       "Microsoft.EntityFrameworkCore >= 6.0.16",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.16",
@@ -8769,7 +8792,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\FPT_Polytechnic\\C#5\\Ass\\Assignment_CS5_Share\\Assignment_CS5_Share.csproj": {
+              "projectPath": "D:\\FPT_Polytechnic\\C#5\\Ass\\Assignment_CS5_Share\\Assignment_CS5_Share.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
