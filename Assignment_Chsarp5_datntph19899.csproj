@@ -22,4 +22,8 @@
     <PackageReference Include="Velites.Utility.EnityFrameworkExtension" Version="1.0.19" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Assignment_CS5_Share\Assignment_CS5_Share.csproj" />
+  </ItemGroup>
+
 </Project>

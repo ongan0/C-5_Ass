@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Assignment_Chsarp5_datntph19899._1_DataProcessing._3_Context;
 using Assignment_Chsarp5_datntph19899._2_Handle_Operation._1_IServices;
+using Assignment_CS5_Share._1_Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Assignment_Chsarp5_datntph19899._1_DataProcessing._1_Models
+namespace Assignment_Chsarp5_datntph19899._2_Handle_Operation._2_Services
 {
     public class Express_DeliveryServices : IExpress_DeliveryServices
     {
