@@ -369,6 +369,8 @@ namespace Assignment_Chsarp5_datntph19899.Migrations
 
                     b.HasIndex("FoodID");
 
+                    b.HasIndex("UserID");
+
                     b.ToTable("Reviews");
                 });
 
@@ -515,21 +517,6 @@ namespace Assignment_Chsarp5_datntph19899.Migrations
                     b.ToTable("FoodOrderDetail");
                 });
 
-            modelBuilder.Entity("ReviewsUser", b =>
-                {
-                    b.Property<Guid>("ReviewsID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("UsersID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("ReviewsID", "UsersID");
-
-                    b.HasIndex("UsersID");
-
-                    b.ToTable("ReviewsUser");
-                });
-
             modelBuilder.Entity("Assignment_Chsarp5_datntph19899._1_DataProcessing._1_Models.Bill", b =>
                 {
                     b.HasOne("Assignment_Chsarp5_datntph19899._1_DataProcessing._1_Models.Delivery_Address", "Delivery_Address")
@@ -616,7 +603,15 @@ namespace Assignment_Chsarp5_datntph19899.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Assignment_Chsarp5_datntph19899._1_DataProcessing._1_Models.User", "User")
+                        .WithMany("Reviews")
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Food");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Assignment_Chsarp5_datntph19899._1_DataProcessing._1_Models.User", b =>
@@ -705,21 +700,6 @@ namespace Assignment_Chsarp5_datntph19899.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("ReviewsUser", b =>
-                {
-                    b.HasOne("Assignment_Chsarp5_datntph19899._1_DataProcessing._1_Models.Reviews", null)
-                        .WithMany()
-                        .HasForeignKey("ReviewsID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Assignment_Chsarp5_datntph19899._1_DataProcessing._1_Models.User", null)
-                        .WithMany()
-                        .HasForeignKey("UsersID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("Assignment_Chsarp5_datntph19899._1_DataProcessing._1_Models.Bill", b =>
                 {
                     b.Navigation("BillDetails");
@@ -759,6 +739,8 @@ namespace Assignment_Chsarp5_datntph19899.Migrations
                     b.Navigation("Delivery_Addresses");
 
                     b.Navigation("Orders");
+
+                    b.Navigation("Reviews");
                 });
 #pragma warning restore 612, 618
         }

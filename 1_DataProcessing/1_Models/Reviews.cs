@@ -11,6 +11,6 @@
         public DateTime Updated_At { get; set; }
 
         public virtual Food Food { get; set; }
-        public ICollection <User> Users { get; set; }
+        public virtual User User { get; set; }
     }
 }

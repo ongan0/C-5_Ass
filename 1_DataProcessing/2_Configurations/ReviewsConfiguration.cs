@@ -10,6 +10,7 @@ namespace Assignment_Chsarp5_datntph19899._1_DataProcessing._2_Configurations
         {
             builder.HasKey(c => c.ID);
             builder.HasOne(c => c.Food).WithMany(c => c.Reviews).HasForeignKey(c => c.FoodID);
+            builder.HasOne(c => c.User).WithMany(c => c.Reviews).HasForeignKey(c => c.UserID);
         }
     }
 }

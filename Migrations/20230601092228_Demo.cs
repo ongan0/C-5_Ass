@@ -164,29 +164,6 @@ namespace Assignment_Chsarp5_datntph19899.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Reviews",
-                columns: table => new
-                {
-                    ID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    FoodID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    UserID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Rating = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Created_At = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Updated_At = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Reviews", x => x.ID);
-                    table.ForeignKey(
-                        name: "FK_Reviews_Foods_FoodID",
-                        column: x => x.FoodID,
-                        principalTable: "Foods",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Users",
                 columns: table => new
                 {
@@ -304,24 +281,29 @@ namespace Assignment_Chsarp5_datntph19899.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ReviewsUser",
+                name: "Reviews",
                 columns: table => new
                 {
-                    ReviewsID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    UsersID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    ID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    FoodID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    UserID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Rating = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Created_At = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Updated_At = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ReviewsUser", x => new { x.ReviewsID, x.UsersID });
+                    table.PrimaryKey("PK_Reviews", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_ReviewsUser_Reviews_ReviewsID",
-                        column: x => x.ReviewsID,
-                        principalTable: "Reviews",
+                        name: "FK_Reviews_Foods_FoodID",
+                        column: x => x.FoodID,
+                        principalTable: "Foods",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ReviewsUser_Users_UsersID",
-                        column: x => x.UsersID,
+                        name: "FK_Reviews_Users_UserID",
+                        column: x => x.UserID,
                         principalTable: "Users",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
@@ -501,9 +483,9 @@ namespace Assignment_Chsarp5_datntph19899.Migrations
                 column: "FoodID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ReviewsUser_UsersID",
-                table: "ReviewsUser",
-                column: "UsersID");
+                name: "IX_Reviews_UserID",
+                table: "Reviews",
+                column: "UserID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Users_RoleID",
@@ -535,7 +517,7 @@ namespace Assignment_Chsarp5_datntph19899.Migrations
                 name: "FoodOrderDetail");
 
             migrationBuilder.DropTable(
-                name: "ReviewsUser");
+                name: "Reviews");
 
             migrationBuilder.DropTable(
                 name: "Bills");
@@ -550,7 +532,7 @@ namespace Assignment_Chsarp5_datntph19899.Migrations
                 name: "OrdelDetail");
 
             migrationBuilder.DropTable(
-                name: "Reviews");
+                name: "Foods");
 
             migrationBuilder.DropTable(
                 name: "Delivery_Addresses");
@@ -560,9 +542,6 @@ namespace Assignment_Chsarp5_datntph19899.Migrations
 
             migrationBuilder.DropTable(
                 name: "Orders");
-
-            migrationBuilder.DropTable(
-                name: "Foods");
 
             migrationBuilder.DropTable(
                 name: "Users");
