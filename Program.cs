@@ -1,4 +1,4 @@
-using Assignment_Chsarp5_datntph19899._1_DataProcessing._1_Models;
+//using Assignment_Chsarp5_datntph19899._1_DataProcessing._1_Models;
 using Assignment_Chsarp5_datntph19899._1_DataProcessing._3_Context;
 using Assignment_Chsarp5_datntph19899._2_Handle_Operation._1_IServices;
 using Assignment_Chsarp5_datntph19899._2_Handle_Operation._2_Services;
@@ -21,6 +21,8 @@ builder.Services.AddTransient<IFoodServices, FoodServices>();
 builder.Services.AddTransient<IExpress_DeliveryServices, Express_DeliveryServices>();
 builder.Services.AddTransient<IComboServices, ComboServices>();
 builder.Services.AddTransient<IRoleServices, RoleServices>();
+builder.Services.AddTransient<ICategoryServices, CategoryServices>();
+builder.Services.AddTransient<ICouponServices, CouponServices>();
 
 var app = builder.Build();
 
